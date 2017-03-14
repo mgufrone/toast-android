@@ -15,20 +15,13 @@ import {
 } from 'react-native';
 
 const {ToastModule} = NativeModules;
-console.log(ToastModule);
+import TextAndroid from './TextAndroid';
 export default class ToastAndroid extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <TouchableOpacity onPress={()=>this.showToast('hello world long', ToastModule.long)}>
-          <Text>Show Hello world long</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={()=>this.showToast('hello world short', ToastModule.long)}>
-          <Text>Show Hello world short</Text>
-        </TouchableOpacity>
+        <Text>Hello WOrld</Text>
+        <TextAndroid text={"Hello World"} />
       </View>
     );
   }

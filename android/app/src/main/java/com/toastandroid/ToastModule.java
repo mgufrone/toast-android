@@ -1,7 +1,9 @@
 package com.toastandroid;
 
+import android.content.Context;
 import android.widget.Toast;
 
+import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -25,6 +27,10 @@ public class ToastModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void show(String message, int duration){
         Toast.makeText(getReactApplicationContext(), message, duration).show();
+    }
+    @ReactMethod
+    public void fetchSomething(Promise promise){
+        promise.resolve("Hello");
     }
 
     @Nullable
